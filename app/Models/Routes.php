@@ -19,4 +19,19 @@ class Routes extends Model
             "uses" => $this->uses,
         ];
     }
+
+    public function getWhereOptions()
+    {
+        $result = [];
+        $data = $this->regex;
+        $regex = explode(";;", $data);
+        foreach( $regex as $r )
+        {
+            $split = explode("::", $r);
+            if( sizeof($split) != 2 ) continue;
+            $result[ $split[0] ] = $split[1];
+        }
+        //print_r( $result );
+        return $result;
+    }
 }

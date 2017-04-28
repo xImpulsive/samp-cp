@@ -6,10 +6,12 @@ foreach( $routes as $route )
 {
     if( $route->type == Routes::$REQUEST_GET )
     {
-        Route::get( $route->route_match, $route->getOptions());
+        Route::get( $route->route_match, $route->getOptions())
+            ->where( $route->getWhereOptions() );
     }
     else if ( $route->type == Route::$REQUEST_POST )
     {
-        Route::post( $route->route_match, $route->getOptions());
+        Route::post( $route->route_match, $route->getOptions())
+            ->where( $route->getWhereOptions() );
     }
 }
