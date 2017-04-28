@@ -3,10 +3,19 @@ namespace App\Http\Controllers\Packages\SampCP\User;
 
 use Illuminate\Routing\Controller as BaseController;
 
+
+
 class UserController extends BaseController
 {
+    /*
+     * Route: /user/{user}
+     * Alias: user.request
+     * Matches:
+     *      [user] => [0-9]+
+     *      ...
+     */
     public function userRequest( $userID )
     {
-        return $userID;
+        // @TODO some logic here
     }
 }
