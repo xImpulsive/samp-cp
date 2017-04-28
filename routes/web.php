@@ -10,10 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Models\Routes;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*
+ * STATIC ROUTES
+ */
 
 // @TODO before filter!
 Route::group(["prefix" => "/acp"], function() {
@@ -24,3 +29,8 @@ Route::group(["prefix" => "/acp"], function() {
     ]);
 
 });
+
+/*
+ * DYNAMIC ROUTES
+ */
+require_once( base_path() . "/routes/database.php" );
