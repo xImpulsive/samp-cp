@@ -33,6 +33,11 @@ Route::group(["prefix" => "/acp"], function() {
         "uses" => "AdminController@showImport",
     ]);
 
+    Route::get("/themes/create", [
+        "as" => "acp.themes.create",
+        "uses" => "AdminController@showCreate",
+    ]);
+
     Route::get("/plugins/import", [
         "as" => "acp.plugins.import",
         "uses" => "PluginController@import",

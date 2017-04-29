@@ -23,8 +23,8 @@
                 </a>
             </li> */ ?>
             <li class="header">@lang("acp.theming.heading")</li>
-            <li>
-                <a href="#">
+            <li class="{{ HTML::activeRoute("acp.themes.create") }}">
+                <a href="{{ URL::route("acp.themes.create") }}">
                     <i class="fa fa-dashboard"></i>
                     <span>Theme erstellen</span>
                 </a>
@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li class="header">@lang("acp.plugin.heading")</li>
-            <li>
+            <li class="{{ HTML::activeRoute("acp.plugins.import") }}">
                 <a href="{{ URL::route("acp.plugins.import") }}">
                     <i class="fa fa-upload"></i>
                     <span>Plugin importieren</span>
