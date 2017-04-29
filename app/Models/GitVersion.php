@@ -3,9 +3,10 @@ namespace App\Models;
 
 class GitVersion
 {
-    public static function getVersion($branch = "master")
+    public static function getVersion()
     {
-        if ( $hash = file_get_contents( sprintf('/.git/refs/heads/%s', $branch ) ) ) {
+        if ( $hash = file_get_contents( app_path() . "/version.txt" ) ) {
+            $hash = str_replace(['$Id: ', "$"], "", $hash);
             return $hash;
         } else {
             return false;
