@@ -4,5 +4,12 @@ return [
 
     "theming" => [
         "heading" => "Darstellung",
+        "create" => "Theme erstellen",
+        "import" => "Theme importieren",
+    ],
+
+    "plugin" => [
+        "heading" => "Plugins",
+        "import" => "Plugin importieren",
     ],
 ];

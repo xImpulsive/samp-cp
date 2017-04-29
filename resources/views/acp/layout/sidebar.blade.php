@@ -26,19 +26,19 @@
             <li class="{{ HTML::activeRoute("acp.themes.create") }}">
                 <a href="{{ URL::route("acp.themes.create") }}">
                     <i class="fa fa-dashboard"></i>
-                    <span>Theme erstellen</span>
+                    <span>@lang("acp.theming.create")</span>
                 </a>
             </li>
             <li class="{{ HTML::activeRoute("acp.themes.import") }}">
                 <a href="{{ URL::route("acp.themes.import") }}">
-                    <i class="fa fa-upload"></i><span>Theme importieren</span>
+                    <i class="fa fa-upload"></i><span>@lang("acp.theming.import")</span>
                 </a>
             </li>
             <li class="header">@lang("acp.plugin.heading")</li>
             <li class="{{ HTML::activeRoute("acp.plugins.import") }}">
                 <a href="{{ URL::route("acp.plugins.import") }}">
                     <i class="fa fa-upload"></i>
-                    <span>Plugin importieren</span>
+                    <span>@lang("acp.plugin.import")</span>
                 </a>
             </li>
         </ul>
