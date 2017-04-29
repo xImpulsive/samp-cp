@@ -38,4 +38,4 @@ Das Feedback und die Vorschläge der Nutzer sind für mich wichtig weshalb ich v
 - S3RX | Inhaber
 - KaltesSnickers | Inhaber
 - xGreekz7x | Entwickler
-- derrobin154 | Entwickler
+- derrobin154 | Entwicklesr
