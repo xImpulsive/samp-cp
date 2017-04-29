@@ -322,6 +322,8 @@ class ComposerStaticInit336776893116a6b260f62e54cbb5097b
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\GitVersion' => __DIR__ . '/../..' . '/app/Models/GitVersion.php',
+        'App\\Models\\Plugin' => __DIR__ . '/../..' . '/app/Models/Plugin.php',
         'App\\Models\\Routes' => __DIR__ . '/../..' . '/app/Models/Routes.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

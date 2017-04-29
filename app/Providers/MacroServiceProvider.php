@@ -13,6 +13,7 @@ class MacroServiceProvider extends ServiceProvider {
     public function boot()
     {
         require app_path() . '/HtmlHelper/activeRoute.php';
+        require app_path() . '/HtmlHelper/version.php';
         // etc...
     }
 
