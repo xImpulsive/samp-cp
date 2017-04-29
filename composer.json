@@ -1,9 +1,34 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
+    "name": "samp-cp/samp-cp",
+    "description": "Ein Verwaltungspanel für SAMP Server",
     "type": "project",
+    "version": "1.0",
+    "homepage": "https://samp-cp.com",
+    "license": "Open Source",
+    "authors": [
+        {
+            "name": "S3RX",
+            "email": "s3rx@samp-cp.com",
+            "homepage": "https://samp-cp.com",
+            "role": "Owner"
+        },
+        {
+            "name": "xGreekz7x",
+            "email": "xgreekz7x@samp-cp.com",
+            "homepage": "https://samp-cp.com",
+            "role": "Developer"
+        },
+        {
+            "name": "derrobin154",
+            "email": "derrobin154@samp-cp.com",
+            "homepage": "https://samp-cp.com",
+            "role": "Developer"
+        }
+    ],
+     "support": {
+        "email": "support@samp-cp.com",
+        "forum": "https://samp-cp.com/forum"
+    },
     "require": {
         "php": ">=5.6.4",
         "barryvdh/laravel-debugbar": "^2.3",

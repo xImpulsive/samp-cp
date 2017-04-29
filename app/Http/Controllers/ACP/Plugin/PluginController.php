@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plugin;
+use App\Models\Routes;
 use Illuminate\Routing\Controller as BaseController;
 
 use Illuminate\Support\Facades\Input;
@@ -40,6 +41,9 @@ class PluginController extends BaseController
         $collection = collect( $data );
         $developer = collect( $collection->get("developer", []) );
 
+
+        // First Step register plugin in Database
+        /*
         $plugin = new Plugin();
 
         $plugin->name = $collection->get("name", "");
@@ -51,5 +55,34 @@ class PluginController extends BaseController
         $plugin->developer_name = $developer->get("name", "");
         $plugin->developer_website = $developer->get("website", "");
         $plugin->save();
+
+        */
+
+        $routes = collect( $collection->get("routes", []) )->map(function( $route ) {
+            return collect( $route );
+        });
+
+        foreach( $routes as $route )
+        {
+            $matches = collect( $route->get("matches", []) )->map( function($match) {
+                return collect( $match );
+            });
+
+            $regex = implode(";;", $matches->map( function( $match ) {
+                return $match->get("matcher", ""). "::" . $match->get("regex", "");
+            })->toArray());
+
+            /*
+            $routeModel = new Routes();
+            $routeModel->type = $route->get("type", Routes::$REQUEST_GET);
+            $routeModel->route_match = $route->get("route_match", "");
+            $routeModel->alias = $route->get("alias", "");
+            $routeModel->uses = $route->get("uses", "");
+            $routeModel->regex = $regex;
+            // @TODO here the plugin id!!
+            $routeModel->save();
+            */
+
+        }
     }
 }
