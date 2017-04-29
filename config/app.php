@@ -177,8 +177,13 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Barryvdh\Debugbar\ServiceProvider::class
+        Barryvdh\Debugbar\ServiceProvider::class,
 
+        App\Providers\MacroServiceProvider::class,
+
+        'Collective\Html\HtmlServiceProvider',
+        'Chumper\Zipper\ZipperServiceProvider',
+        'Nathanmac\Utilities\Parser\ParserServiceProvider',
     ],
 
     /*
@@ -227,6 +232,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Form' => 'Collective\Html\FormFacade',
+        'Html' => 'Collective\Html\HtmlFacade',
+        'Zipper' => 'Chumper\Zipper\Zipper',
+        'Parser' => 'Nathanmac\Utilities\Parser\Facades\Parser',
 
     ],
 

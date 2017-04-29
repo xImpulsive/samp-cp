@@ -33,6 +33,16 @@ Route::group(["prefix" => "/acp"], function() {
         "uses" => "AdminController@showImport",
     ]);
 
+    Route::get("/plugins/import", [
+        "as" => "acp.plugins.import",
+        "uses" => "PluginController@import",
+    ]);
+
+    Route::post("/plugins/import", [
+        "as" => "acp.plugins.import",
+        "uses" => "PluginController@doImport",
+    ]);
+
 });
 
 /*

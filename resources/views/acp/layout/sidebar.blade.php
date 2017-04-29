@@ -23,8 +23,24 @@
                 </a>
             </li> */ ?>
             <li class="header">@lang("acp.theming.heading")</li>
-            <li><a href="#"><i class="fa fa-dashboard"></i> Theme erstellen</a></li>
-            <li><a href="#"><i class="fa fa-upload"></i> Theme importieren</a></li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Theme erstellen</span>
+                </a>
+            </li>
+            <li class="{{ HTML::activeRoute("acp.themes.import") }}">
+                <a href="{{ URL::route("acp.themes.import") }}">
+                    <i class="fa fa-upload"></i><span>Theme importieren</span>
+                </a>
+            </li>
+            <li class="header">@lang("acp.plugin.heading")</li>
+            <li>
+                <a href="{{ URL::route("acp.plugins.import") }}">
+                    <i class="fa fa-upload"></i>
+                    <span>Plugin importieren</span>
+                </a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->
