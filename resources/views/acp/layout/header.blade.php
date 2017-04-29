@@ -109,26 +109,26 @@
                             <img src="https://breadfish.de/wcf/images/avatars/f6/8686-f68b4cfb8cd403bd6227a00686ca3ad19368092c.png" width="160px" height="160px" class="img-circle">
                             <p>
                                 xGreekz7x - Administrator
-                                <small>Mitglied seit 30.04.2017</small>
+                                <small>@lang("acp.usermenu.usersince") 30.04.2017</small>
                             </p>
                         </li>
                         <!-- Menu Body -->
                         <li class="user-body">
                             <div class="col-xs-4 text-center">
-                                <a href="#">Einstellungen</a>
+                                <a href="#">@lang("acp.usermenu.settings")</a>
                             </div>
                             <div class="col-xs-4 text-center">
-                                <a href="#">Daten ändern</a>
+                                <a href="#">@lang("acp.usermenu.changeinfos")</a>
                             </div>
 
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Mein Profil</a>
+                                <a href="#" class="btn btn-default btn-flat">@lang("acp.usermenu.myprofil")</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Ausloggen</a>
+                                <a href="#" class="btn btn-default btn-flat">@lang("acp.usermenu.logout")</a>
                             </div>
                         </li>
                     </ul>
