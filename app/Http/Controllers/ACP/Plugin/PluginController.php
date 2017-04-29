@@ -14,6 +14,12 @@ use Nathanmac\Utilities\Parser\Facades\Parser;
 class PluginController extends BaseController
 {
 
+    public function overview()
+    {
+        $plugins = Plugin::all();
+        return view("acp.plugins.overview")->with("plugins", $plugins);
+    }
+
     public function import()
     {
         return view("acp.plugins.import");
