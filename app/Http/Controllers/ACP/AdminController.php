@@ -9,4 +9,9 @@ class AdminController extends BaseController
     {
         return view("acp.index");
     }
+
+    public function showImport()
+    {
+        return view("acp.themes.import");
+    }
 }

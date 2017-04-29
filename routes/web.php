@@ -28,6 +28,11 @@ Route::group(["prefix" => "/acp"], function() {
         "uses" => "AdminController@index",
     ]);
 
+    Route::get("/themes/import", [
+        "as" => "acp.themes.import",
+        "uses" => "AdminController@showImport",
+    ]);
+
 });
 
 /*

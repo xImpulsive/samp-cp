@@ -1,8 +1,6 @@
-<!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-        <!-- Sidebar user panel -->
+
         <div class="user-panel">
             <div class="pull-left image">
                 <img src="https://breadfish.de/wcf/images/avatars/f6/8686-f68b4cfb8cd403bd6227a00686ca3ad19368092c.png" class="img-circle" alt="User Image">
@@ -14,6 +12,7 @@
         </div>
 
         <ul class="sidebar-menu">
+            <?php /*
             <li class="header">MAIN NAVIGATION</li>
             <li>
                 <a href="pages/widgets.html">
@@ -22,12 +21,10 @@
                         <small class="label pull-right bg-green">new</small>
                     </span>
                 </a>
-            </li>
-            <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-            <li class="header">LABELS</li>
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+            </li> */ ?>
+            <li class="header">@lang("acp.theming.heading")</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Theme erstellen</a></li>
+            <li><a href="#"><i class="fa fa-upload"></i> Theme importieren</a></li>
         </ul>
     </section>
     <!-- /.sidebar -->
