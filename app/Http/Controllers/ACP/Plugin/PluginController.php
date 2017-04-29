@@ -43,7 +43,7 @@ class PluginController extends BaseController
 
 
         // First Step register plugin in Database
-        /*
+
         $plugin = new Plugin();
 
         $plugin->name = $collection->get("name", "");
@@ -56,7 +56,7 @@ class PluginController extends BaseController
         $plugin->developer_website = $developer->get("website", "");
         $plugin->save();
 
-        */
+
 
         $routes = collect( $collection->get("routes", []) )->map(function( $route ) {
             return collect( $route );
@@ -72,16 +72,17 @@ class PluginController extends BaseController
                 return $match->get("matcher", ""). "::" . $match->get("regex", "");
             })->toArray());
 
-            /*
+
             $routeModel = new Routes();
+            // @TODO here the plugin id!!
+            $routeModel->plugin_id = $plugin->id;
             $routeModel->type = $route->get("type", Routes::$REQUEST_GET);
             $routeModel->route_match = $route->get("route_match", "");
             $routeModel->alias = $route->get("alias", "");
             $routeModel->uses = $route->get("uses", "");
             $routeModel->regex = $regex;
-            // @TODO here the plugin id!!
             $routeModel->save();
-            */
+
 
         }
     }
