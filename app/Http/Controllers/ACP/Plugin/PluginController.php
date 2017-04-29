@@ -40,16 +40,16 @@ class PluginController extends BaseController
         $collection = collect( $data );
         $developer = collect( $collection->get("developer", []) );
 
-
         $plugin = new Plugin();
+
         $plugin->name = $collection->get("name", "");
         $plugin->title = $collection->get("title", "");
         $plugin->description = $collection->get("description", "");
         $plugin->version = $collection->get("version", "");
         $plugin->license = $collection->get("license", "");
-        $plugin->developer_name = $developer->get("name");
-        $plugin->developer_website = $developer->get("website");
-        $plugin->save();
 
+        $plugin->developer_name = $developer->get("name", "");
+        $plugin->developer_website = $developer->get("website", "");
+        $plugin->save();
     }
 }

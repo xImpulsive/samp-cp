@@ -5,5 +5,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Plugin extends Model
 {
-    protected $table = "plugin";
+    protected $table = "plugins";
 }
