@@ -7,10 +7,11 @@ use Illuminate\Routing\Controller as BaseController;
 
 class UserController extends BaseController
 {
+
     /*
      * Route: /user/{user}
      * Alias: user.request
-     * Matches:
+     * Regular Expression:
      *      [user] => [0-9]+
      *      ...
      */

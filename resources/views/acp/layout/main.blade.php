@@ -3,93 +3,84 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>@lang('acp.title')</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="{{ URL::asset("bootstrap/css/bootstrap.min.css") }}">
 
-    <!-- Styles -->
-    <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 100;
-            height: 100vh;
-            margin: 0;
-        }
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
-        .full-height {
-            height: 100vh;
-        }
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ URL::asset("adminlte/css/AdminLTE.min.css") }}">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="{{ URL::asset("adminlte/css/skins/_all-skins.min.css") }}">
 
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-        .position-ref {
-            position: relative;
-        }
+    <!-- Custom Styles -->
+    @yield("styles")
 
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-    </style>
+    <!-- Custom Head-Scripts -->
+    @yield("head-scripts")
 </head>
-<body>
-<div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @if (Auth::check())
-                <a href="{{ url('/home') }}">Home</a>
-            @else
-                <a href="{{ url('/login') }}">Login</a>
-                <a href="{{ url('/register') }}">Register</a>
-            @endif
-        </div>
-    @endif
+<body class="hold-transition skin-blue sidebar-mini">
 
-    <div class="content">
-        <div class="title m-b-md">
-            Laravel
-        </div>
+<div class="wrapper">
 
-        <div class="links">
-            <a href="https://laravel.com/docs">Documentation</a>
-            <a href="https://laracasts.com">Laracasts</a>
-            <a href="https://laravel-news.com">News</a>
-            <a href="https://forge.laravel.com">Forge</a>
-            <a href="https://github.com/laravel/laravel">GitHub</a>
-        </div>
+    @include("acp.layout.header")
+
+    @include("acp.layout.sidebar")
+
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Blank page
+                <small>it all starts here</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="#">Examples</a></li>
+                <li class="active">Blank page</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            @yield("content")
+        </section>
+        <!-- /.content -->
     </div>
+    <!-- /.content-wrapper -->
+
+    @include("acp.layout.footer")
+
 </div>
+
+<!-- jQuery 2.2.3 -->
+<script src="{{ URL::asset("adminlte/plugins/jQuery/jquery-2.2.3.min.js") }}"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{{ URL::asset("bootstrap/js/bootstrap.min.js") }}"></script>
+<!-- SlimScroll -->
+<script src="{{ URL::asset("adminlte/plugins/slimScroll/jquery.slimscroll.min.js") }}"></script>
+<!-- FastClick -->
+<script src="{{ URL::asset("adminlte/plugins/fastclick/fastclick.js") }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ URL::asset("adminlte/js/app.min.js") }}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ URL::asset("adminlte/js/demo.js") }}"></script>
+@yield("scripts")
 </body>
 </html>
