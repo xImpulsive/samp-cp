@@ -35,7 +35,7 @@ Route::group(["prefix" => "/acp"], function() {
 
     Route::get("/themes/create", [
         "as" => "acp.themes.create",
-        "uses" => "AdminController@showCreate",
+        "uses" => "AdminController@showThemeCreate",
     ]);
 
     Route::get("/plugins/import", [
