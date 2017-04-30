@@ -18,6 +18,7 @@ return [
         "heading" => "Darstellung",
         "create" => "Theme erstellen",
         "import" => "Theme importieren",
+        "info" => "Hier hast Du die Möglichkeit ein Theme für das SAMP-CP zu importieren."
     ],
 
     "plugin" => [
@@ -36,6 +37,7 @@ return [
         "developer" => "Entwickler",
         "version" => "Version",
         "actions" => "Aktionen",
-        "delete" => "Löschen"
+        "delete" => "Löschen",
+        "search" => "Suchen",
     ],
 ];
