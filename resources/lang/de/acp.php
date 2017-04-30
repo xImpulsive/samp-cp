@@ -26,9 +26,16 @@ return [
         "messages" => [
             "remove" => "Plugin &laquo; :name &raquo; erfolgreich entfernt!",
             "add" => "Plugin &laquo; :name &raquo; erfolgreich installiert!",
+            "noplugin" => "Es sind keine Plugins installiert",
         ],
         "import" => "Plugin importieren",
         "importinfo" => "Hier hast Du die Möglichkeit ein Plugin für das SAMP-CP zu importieren. ",
         "importbutton" => "Plugin importieren",
+        "name" => "Pluginname",
+        "desc" => "Beschreibung",
+        "developer" => "Entwickler",
+        "version" => "Version",
+        "actions" => "Aktionen",
+        "delete" => "Löschen"
     ],
 ];
