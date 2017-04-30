@@ -35,10 +35,10 @@
                 </a>
             </li>
             <li class="header">@lang("acp.plugin.heading")</li>
-            <li class="{{ HTML::activeRoute("acp.plugins.import") }}">
-                <a href="{{ URL::route("acp.plugins.import") }}">
-                    <i class="fa fa-upload"></i>
-                    <span>@lang("acp.plugin.import")</span>
+            <li class="{{ HTML::activeRoute("acp.plugins.overview") }}">
+                <a href="{{ URL::route("acp.plugins.overview") }}">
+                    <i class="fa fa-gear"></i>
+                    <span>@lang("acp.plugin.overview")</span>
                 </a>
             </li>
         </ul>

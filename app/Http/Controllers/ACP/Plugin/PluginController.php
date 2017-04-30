@@ -5,8 +5,10 @@ use App\Models\Plugin;
 use App\Models\Routes;
 use Illuminate\Routing\Controller as BaseController;
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
 use Chumper\Zipper\Zipper;
+use Illuminate\Support\Facades\Lang;
 use Nathanmac\Utilities\Parser\Exceptions\ParserException;
 use Nathanmac\Utilities\Parser\Facades\Parser;
 
@@ -14,9 +16,24 @@ use Nathanmac\Utilities\Parser\Facades\Parser;
 class PluginController extends BaseController
 {
 
-    public function import()
+    public function overview()
     {
-        return view("acp.plugins.import");
+        $plugins = Plugin::all();
+        return view("acp.plugins.overview")->with("plugins", $plugins);
+    }
+
+    public function remove( $id )
+    {
+        $plugin = Plugin::find( $id );
+        if( !$plugin ) return App::abort( 404 );
+
+        $title = $plugin->title;
+
+        $plugin->remove();
+
+        return response()
+            ->redirectToRoute("acp.plugins.overview")
+            ->withSuccess( Lang::get("acp.plugin.messages.remove", ["name" => $title]) );
     }
 
     public function doImport()
@@ -85,5 +102,11 @@ class PluginController extends BaseController
 
 
         }
+
+        $title = $plugin->title;
+
+        return response()
+                ->redirectToRoute("acp.plugins.overview")
+                ->withSuccess( Lang::get("acp.plugin.messages.add", ["name" => $title]) );
     }
 }

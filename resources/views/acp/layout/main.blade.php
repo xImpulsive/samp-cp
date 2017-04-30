@@ -45,6 +45,7 @@
 
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
+        <?php /*
         <section class="content-header">
             <h1>
                 Blank page
@@ -55,10 +56,16 @@
                 <li><a href="#">Examples</a></li>
                 <li class="active">Blank page</li>
             </ol>
-        </section>
+        </section>*/ ?>
 
         <!-- Main content -->
         <section class="content">
+            @if( Session::has("success") )
+                <div class="alert alert-success">
+                    {{ Session::get("success") }}
+                </div>
+            @endif
+
             @yield("content")
         </section>
         <!-- /.content -->
