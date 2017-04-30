@@ -1,6 +1,9 @@
 @extends("acp.layout.main")
 
 @section("content")
+
+    {!! Injector::event("anyname") !!}
+
     @if( sizeof($plugins) > 0 )
         <div class="box box-primary">
             <div class="box-header">
@@ -60,4 +63,6 @@
             </form>
         </div>
     </div>
+
+    {!! Injector::event("afterAnyname") !!}
 @stop

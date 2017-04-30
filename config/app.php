@@ -180,6 +180,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
 
         App\Providers\MacroServiceProvider::class,
+        App\Providers\PluginServiceProvider::class,
 
         'Collective\Html\HtmlServiceProvider',
         'Chumper\Zipper\ZipperServiceProvider',
@@ -237,6 +238,7 @@ return [
         'Html' => 'Collective\Html\HtmlFacade',
         'Zipper' => 'Chumper\Zipper\Zipper',
         'Parser' => 'Nathanmac\Utilities\Parser\Facades\Parser',
+        "Injector" => App\Http\Injector\Injector::class,
 
     ],
 

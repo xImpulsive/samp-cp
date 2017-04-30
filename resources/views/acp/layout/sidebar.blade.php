@@ -10,7 +10,7 @@
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-
+        {!! Injector::event("acp.sidebar") !!}
         <ul class="sidebar-menu">
             <?php /*
             <li class="header">MAIN NAVIGATION</li>

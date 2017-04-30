@@ -6,9 +6,11 @@ use App\Models\Routes;
 use Illuminate\Routing\Controller as BaseController;
 
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Input;
 use Chumper\Zipper\Zipper;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\View;
 use Nathanmac\Utilities\Parser\Exceptions\ParserException;
 use Nathanmac\Utilities\Parser\Facades\Parser;
 
@@ -19,7 +21,16 @@ class PluginController extends BaseController
     public function overview()
     {
         $plugins = Plugin::all();
-        return view("acp.plugins.overview")->with("plugins", $plugins);
+
+        Event::listen("view.inject.anyname", function() {
+            return View::make("acp.layout.test");
+        });
+
+        //$view = view("acp.plugins.overview");
+        $view = view("userProfile::sidebarInformation");
+
+        return $view
+            ->with("plugins", $plugins);
     }
 
     public function remove( $id )
