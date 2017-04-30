@@ -1,5 +1,11 @@
 <p align="center"><img src="http://i.epvpimg.com/rWKrdab.png"></p>
 
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/badges/built-by-developers.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/badges/built-with-love.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/uses-css.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/uses-html.svg)](http://forthebadge.com)
+Rede / Schreibe mit uns auf [Discord](https://discord.gg/q3daYBU)
 ## Über SAMP-CP
 
 Das SAMP-CP ist ein neues User Control Panel für SAMP.
