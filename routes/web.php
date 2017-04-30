@@ -43,10 +43,19 @@ Route::group(["prefix" => "/acp"], function() {
         "uses" => "PluginController@overview",
     ]);
 
-    Route::get("/plugins/import", [
+    Route::get("/plugins/{plugin}/remove", [
+        "as" => "acp.plugins.remove",
+        "uses" => "PluginController@remove",
+    ]);
+
+    /*
+
+     Route::get("/plugins/import", [
         "as" => "acp.plugins.import",
         "uses" => "PluginController@import",
     ]);
+
+    */
 
     Route::post("/plugins/import", [
         "as" => "acp.plugins.import",

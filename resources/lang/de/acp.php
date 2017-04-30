@@ -18,6 +18,10 @@ return [
 
     "plugin" => [
         "heading" => "Plugins",
-        "import" => "Plugin importieren",
+        "overview" => "Übersicht",
+        "messages" => [
+            "remove" => "Plugin &laquo; :name &raquo; erfolgreich entfernt!",
+            "add" => "Plugin &laquo; :name &raquo; erfolgreich installiert!",
+        ],
     ],
 ];

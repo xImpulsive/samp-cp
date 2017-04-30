@@ -2,7 +2,6 @@
 
 @section("content")
     @if( sizeof($plugins) > 0 )
-    <section class="content">
         <div class="box box-primary">
             <div class="box-header">
                 <h3 class="box-title">Installierte Plugins</h3>
@@ -30,14 +29,35 @@
                             <td>{{ $plugin->description }}</td>
                             <td>{{ $plugin->developer_name }}</td>
                             <td>{{ $plugin->version }}</td>
-                            <td><input type="submit" class="btn btn-danger btn-xs" value="Löschen"></td>
+                            <td>
+                                <a href="{{ URL::route("acp.plugins.remove", $plugin->id) }}" class="btn btn-danger btn-xs">Löschen</a>
+                            </td>
                         </tr>
                     @endforeach
                 </table>
             </div>
         </div>
-    </section>
     @else
         <div class="alert alert-info">Noch keine Plugins installiert!</div>
     @endif
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Plugin Import</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fa fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="box-body">
+            Hier hast Du die Möglichkeit ein Plugin für das SAMP-CP zu importieren. <br><br>
+            <form enctype="multipart/form-data" method="POST" action="{{ URL::route("acp.plugins.import") }}" }}>
+                <div class="form-group">
+                    <label for="themeimport">Plugin Importieren</label>
+                    <input type="file" name="archive">
+                </div>
+                <input type="submit" class="btn btn-primary btn-sm" value="Plugin Importieren">
+                {{ csrf_field() }}
+            </form>
+        </div>
+    </div>
 @stop
