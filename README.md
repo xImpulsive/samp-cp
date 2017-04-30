@@ -38,6 +38,6 @@ Das Feedback und die Vorschläge der Nutzer sind für mich wichtig weshalb ich v
 
 ## Offizielle Teammitglieder
 
-- S3RX | Inhaber
-- xGreekz7x | Entwickler
-- derrobin154 | Entwickler
+- [S3RX](https://breadfish.de/index.php?user/40790-s3rx/) | Inhaber
+- [xGreekz7x](https://breadfish.de/index.php?user/18307-xgreekz7x/) | Entwickler
+- [derrobin154](https://breadfish.de/index.php?user/28457-derrobin154/) | Entwickler
