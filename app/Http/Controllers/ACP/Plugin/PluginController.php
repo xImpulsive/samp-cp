@@ -1,15 +1,18 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Listener;
 use App\Models\Plugin;
 use App\Models\Routes;
 use Illuminate\Routing\Controller as BaseController;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Chumper\Zipper\Zipper;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use Nathanmac\Utilities\Parser\Exceptions\ParserException;
 use Nathanmac\Utilities\Parser\Facades\Parser;
@@ -22,14 +25,7 @@ class PluginController extends BaseController
     {
         $plugins = Plugin::all();
 
-        Event::listen("view.inject.anyname", function() {
-            return View::make("acp.layout.test");
-        });
-
-        //$view = view("acp.plugins.overview");
-        $view = view("userProfile::sidebarInformation");
-
-        return $view
+        return view("acp.plugins.overview")
             ->with("plugins", $plugins);
     }
 
@@ -84,8 +80,53 @@ class PluginController extends BaseController
         $plugin->developer_website = $developer->get("website", "");
         $plugin->save();
 
+        $dir = app_path() . "/plugins/" . $plugin->name;
+
+        // second Step, create directories
+        File::makeDirectory( $dir );
+        File::makeDirectory( $dir . "/listeners" );
+        File::makeDirectory( $dir . "/views" );
+        File::makeDirectory( $dir . "/composer" );
+        File::makeDirectory( $dir . "/controller" );
+        File::makeDirectory( $dir . "/models" );
+
+        // between step, install script
+        $installerContent = null;
+
+        $files = $zipper->listFiles("");
+
+        if( in_array("Installer.php", $files) ) {
+            $installerContent = $zipper->getFileContent("Installer.php");
+        }
+
+        if( $installerContent != null ) {
+            File::put($dir . "/Installer.php", $installerContent);
+            if (strlen($installerContent) > 0) {
+                require_once($dir . "/Installer.php");
+                $installer = new \Installer();
+                $installer->install();
+            }
+        }
 
 
+        // 3. step, register listeners
+        $listeners = collect( $collection->get("listeners", []) );
+        foreach( $listeners as $listener )
+        {
+            $li = new Listener();
+            $li->plugin_id = $plugin->id;
+            $li->file = $listener;
+            $li->save();
+        }
+
+        // 4. step, unzip listener, view & controller files!
+        $zipper->folder('listeners')->extractTo( $dir . "/listeners" );
+        $zipper->folder("views")->extractTo( $dir . "/views" );
+        $zipper->folder("controller")->extractTo( $dir . "/controller" );
+        $zipper->folder("models")->extractTo( $dir . "/models" );
+        $zipper->folder("composer")->extractTo( $dir . "/composer" );
+
+        // 5. step, register routes!
         $routes = collect( $collection->get("routes", []) )->map(function( $route ) {
             return collect( $route );
         });
@@ -102,7 +143,6 @@ class PluginController extends BaseController
 
 
             $routeModel = new Routes();
-            // @TODO here the plugin id!!
             $routeModel->plugin_id = $plugin->id;
             $routeModel->type = $route->get("type", Routes::$REQUEST_GET);
             $routeModel->route_match = $route->get("route_match", "");

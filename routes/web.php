@@ -12,14 +12,17 @@
 */
 use App\Models\Routes;
 
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('page::home');
 });
+
+require_once( __DIR__ . "/auth.php" );
 
 /*
  * STATIC ROUTES
  */
-
 // @TODO before filter!
 Route::group(["prefix" => "/acp"], function() {
 
@@ -48,15 +51,6 @@ Route::group(["prefix" => "/acp"], function() {
         "uses" => "PluginController@remove",
     ]);
 
-    /*
-
-     Route::get("/plugins/import", [
-        "as" => "acp.plugins.import",
-        "uses" => "PluginController@import",
-    ]);
-
-    */
-
     Route::post("/plugins/import", [
         "as" => "acp.plugins.import",
         "uses" => "PluginController@doImport",
@@ -67,4 +61,4 @@ Route::group(["prefix" => "/acp"], function() {
 /*
  * DYNAMIC ROUTES
  */
-require_once( base_path() . "/routes/database.php" );
+require_once( __DIR__ . "/database.php" );

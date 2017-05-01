@@ -31,13 +31,5 @@ class EventServiceProvider extends ServiceProvider
         Event::listen('view.inject', function ($name) {
             return event("view.inject." . $name);
         });
-
-        Event::listen("view.inject.anyname", function() {
-            return View::make("acp.layout.test");
-        });
-
-        Event::listen("view.inject.afterAnyname", function() {
-            return "Plugin overview fertig!";
-        });
     }
 }

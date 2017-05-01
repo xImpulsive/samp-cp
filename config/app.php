@@ -182,6 +182,8 @@ return [
         App\Providers\MacroServiceProvider::class,
         App\Providers\PluginServiceProvider::class,
 
+        App\Providers\OptionServiceProvider::class,
+
         'Collective\Html\HtmlServiceProvider',
         'Chumper\Zipper\ZipperServiceProvider',
         'Nathanmac\Utilities\Parser\ParserServiceProvider',

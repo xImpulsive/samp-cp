@@ -1,1 +1,0 @@
-<span style="color: #fff">Plugin based change of layout!</span>
