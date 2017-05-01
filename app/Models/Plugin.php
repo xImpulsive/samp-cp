@@ -11,7 +11,7 @@ class Plugin extends Model
 
     public function remove()
     {
-        $dir = app_path() . "/plugins/" . $this->name;
+        $dir = app_path() . "/Plugins/" . ucfirst( $this->name );
         if( File::exists( $dir . "/Installer.php") ) {
             require_once($dir . "/Installer.php");
             $installer = new \Installer();
