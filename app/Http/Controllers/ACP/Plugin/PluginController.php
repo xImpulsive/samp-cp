@@ -80,15 +80,15 @@ class PluginController extends BaseController
         $plugin->developer_website = $developer->get("website", "");
         $plugin->save();
 
-        $dir = app_path() . "/plugins/" . $plugin->name;
+        $dir = app_path() . "/Plugins/" . ucfirst($plugin->name);
 
         // second Step, create directories
         File::makeDirectory( $dir );
         File::makeDirectory( $dir . "/listeners" );
         File::makeDirectory( $dir . "/views" );
-        File::makeDirectory( $dir . "/composer" );
-        File::makeDirectory( $dir . "/controller" );
-        File::makeDirectory( $dir . "/models" );
+        File::makeDirectory( $dir . "/Composer" );
+        File::makeDirectory( $dir . "/Controller" );
+        File::makeDirectory( $dir . "/Models" );
 
         // between step, install script
         $installerContent = null;
@@ -122,8 +122,8 @@ class PluginController extends BaseController
         // 4. step, unzip listener, view & controller files!
         $zipper->folder('listeners')->extractTo( $dir . "/listeners" );
         $zipper->folder("views")->extractTo( $dir . "/views" );
-        $zipper->folder("controller")->extractTo( $dir . "/controller" );
-        $zipper->folder("models")->extractTo( $dir . "/models" );
+        $zipper->folder("controller")->extractTo( $dir . "/Controller" );
+        $zipper->folder("models")->extractTo( $dir . "/Models" );
         $zipper->folder("composer")->extractTo( $dir . "/composer" );
 
         // 5. step, register routes!
